@@ -13,7 +13,7 @@
 #' @examples formula_mz(abundant_isotopes, formula = "C2H4O1", charge = 0)
 #'
 #'
-formula_mz = function(abundant_isotopes, formula = "C2H4O1", charge = 0){
+formula_mz = function(formula = "C2H4O1", charge = 0,abundant_isotopes = lc8::abundant_isotopes){
 
   mz = numeric()
   for(i in 1:length(formula)){
