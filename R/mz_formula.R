@@ -197,6 +197,9 @@ mz_formula = function(Accurate_mass = 148.0604,
 
 
   #print(paste("iteration =", iteration))
+  if(length(temp_formula_list)==0){
+    return(NA)
+  }
 
   formula_df=as.data.frame(matrix(unlist(temp_formula_list),ncol=3,byrow = T),stringsAsFactors=F)
   colnames(formula_df) = c("formula", "differ", "db_r")
