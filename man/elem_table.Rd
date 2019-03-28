@@ -4,7 +4,7 @@
 \name{elem_table}
 \alias{elem_table}
 \title{elem_table}
-\format{A data frame with 30 rows and 5 variables:
+\format{A data frame with 31 rows and 5 variables:
 \describe{
   \item{\code{element}}{character COLUMN_DESCRIPTION}
   \item{\code{isotope}}{character COLUMN_DESCRIPTION}

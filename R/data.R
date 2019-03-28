@@ -28,7 +28,7 @@
 
 #' @title elem_table
 #' @description elem_table
-#' @format A data frame with 30 rows and 5 variables:
+#' @format A data frame with 31 rows and 5 variables:
 #' \describe{
 #'   \item{\code{element}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{isotope}}{character COLUMN_DESCRIPTION}
