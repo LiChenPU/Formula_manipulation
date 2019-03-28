@@ -11,6 +11,9 @@ formula_rdbe(formula = "C2H4O1", elem_table = lc8::elem_table)
 
 \item{elem_table}{a table records unsaturation}
 }
+\value{
+the ring and double bond number
+}
 \description{
 formula_rdbe
 }

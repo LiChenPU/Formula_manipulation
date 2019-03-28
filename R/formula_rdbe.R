@@ -5,7 +5,7 @@
 #' @param formula e.g. "C2H4O1"
 #' @param elem_table a table records unsaturation
 #'
-#' @return
+#' @return the ring and double bond number
 #' @export
 #'
 #' @examples formula_rdbe(formula = "C2H4O1", elem_table = lc8::elem_table)
