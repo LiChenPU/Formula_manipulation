@@ -1,7 +1,7 @@
 # setwd("./data")
-# elem_table = read.csv("elem_table.csv")
-# save(elem_table, file="elem_table.rda")
-# sinew::makeOxygen(elem_table)
+# abundant_isotopes = read.csv("abundant_isotopes.csv")
+# save(abundant_isotopes, file="abundant_isotopes.rda")
+# sinew::makeOxygen(abundant_isotopes)
 
 #' @title abundant_isotopes
 #' @description This table include the abundant isotope used to calculate exact mass for given formula
