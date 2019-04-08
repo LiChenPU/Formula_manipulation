@@ -1,4 +1,4 @@
-library(readr)
+#library(readr)
 # setwd("./data")
 # full_isotopes = read_csv("full_isotopes.csv")
 # save(full_isotopes, file="full_isotopes.rda")
