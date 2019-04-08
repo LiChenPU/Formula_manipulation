@@ -4,13 +4,14 @@
 \name{full_isotopes}
 \alias{full_isotopes}
 \title{full_isotopes}
-\format{A data frame with 308 rows and 5 variables:
+\format{A data frame with 296 rows and 6 variables:
 \describe{
   \item{\code{element}}{character COLUMN_DESCRIPTION}
   \item{\code{isotope}}{character COLUMN_DESCRIPTION}
   \item{\code{mass}}{double COLUMN_DESCRIPTION}
   \item{\code{abundance}}{double COLUMN_DESCRIPTION}
-  \item{\code{ratioC}}{integer COLUMN_DESCRIPTION}
+  \item{\code{ratioC}}{double COLUMN_DESCRIPTION}
+  \item{\code{Mass_Dif}}{double COLUMN_DESCRIPTION}
 }}
 \usage{
 full_isotopes

@@ -5,15 +5,15 @@
 #'
 #' @param formula e.g. "C2H4O1"
 #' @param charge 0: neutral, 1: positive charge, -1: negative charge
-#' @param abundant_isotopes a table can be imported
+#' @param elem_table a table can be imported
 #'
 #' @return the exact mass of the input formula
 #' @export
 #'
-#' @examples formula_mz(abundant_isotopes, formula = "C2H4O1", charge = 0)
+#' @examples formula_mz(formula = "C2H4O1", charge = 0)
 #'
 #'
-formula_mz = function(formula = "C2H4O1", charge = 0,abundant_isotopes = lc8::abundant_isotopes){
+formula_mz = function(formula = "C2H4O1", charge = 0,elem_table = lc8::elem_table){
 
   mz = numeric()
   for(i in 1:length(formula)){
@@ -72,7 +72,7 @@ formula_mz = function(formula = "C2H4O1", charge = 0,abundant_isotopes = lc8::ab
   mz[i]=0
 
   for(j in 1:length(element2)){
-    mz[i] = mz[i] + abundant_isotopes$mass[element2[j] == abundant_isotopes$element] * number2[j]
+    mz[i] = mz[i] + elem_table$mass[element2[j] == elem_table$element] * number2[j]
   }
 
 

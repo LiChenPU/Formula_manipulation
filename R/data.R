@@ -1,42 +1,34 @@
+library(readr)
 # setwd("./data")
-# abundant_isotopes = read.csv("abundant_isotopes.csv")
-# save(abundant_isotopes, file="abundant_isotopes.rda")
-# sinew::makeOxygen(abundant_isotopes)
-
-#' @title abundant_isotopes
-#' @description This table include the abundant isotope used to calculate exact mass for given formula
-#' @format A data frame with 97 rows and 5 variables:
-#' \describe{
-#'   \item{\code{element}}{character ##}
-#'   \item{\code{isotope}}{character ##}
-#'   \item{\code{mass}}{double ##}
-#'   \item{\code{abundance}}{double ##}
-#'   \item{\code{ratioC}}{integer ##}
-#'}
-#' @details DETAILS
-"abundant_isotopes"
-
+# full_isotopes = read_csv("full_isotopes.csv")
+# save(full_isotopes, file="full_isotopes.rda")
+# sinew::makeOxygen(full_isotopes)
 #' @title full_isotopes
 #' @description This table include the abundant isotope used to calculate exact mass for given formula
-#' @format A data frame with 308 rows and 5 variables:
+#' @format A data frame with 296 rows and 6 variables:
 #' \describe{
 #'   \item{\code{element}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{isotope}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{mass}}{double COLUMN_DESCRIPTION}
 #'   \item{\code{abundance}}{double COLUMN_DESCRIPTION}
-#'   \item{\code{ratioC}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{ratioC}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{Mass_Dif}}{double COLUMN_DESCRIPTION}
 #'}
 #' @details DETAILS
 "full_isotopes"
 
+# elem_table = read_csv("elem_table.csv")
+# save(elem_table, file="elem_table.rda")
+# sinew::makeOxygen(elem_table)
 #' @title elem_table
 #' @description elem_table
-#' @format A data frame with 31 rows and 5 variables:
+#' @format A data frame with 97 rows and 6 variables:
 #' \describe{
 #'   \item{\code{element}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{isotope}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{mass}}{double COLUMN_DESCRIPTION}
 #'   \item{\code{abundance}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{ratioC}}{double COLUMN_DESCRIPTION}
 #'   \item{\code{unsaturation}}{double COLUMN_DESCRIPTION}
 #'}
 #' @details DETAILS

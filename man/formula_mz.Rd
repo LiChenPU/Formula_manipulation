@@ -5,14 +5,14 @@
 \title{formula_mz}
 \usage{
 formula_mz(formula = "C2H4O1", charge = 0,
-  abundant_isotopes = lc8::abundant_isotopes)
+  elem_table = lc8::elem_table)
 }
 \arguments{
 \item{formula}{e.g. "C2H4O1"}
 
 \item{charge}{0: neutral, 1: positive charge, -1: negative charge}
 
-\item{abundant_isotopes}{a table can be imported}
+\item{elem_table}{a table can be imported}
 }
 \value{
 the exact mass of the input formula
@@ -21,7 +21,7 @@ the exact mass of the input formula
 formula_mz
 }
 \examples{
-formula_mz(abundant_isotopes, formula = "C2H4O1", charge = 0)
+formula_mz(formula = "C2H4O1", charge = 0)
 
 
 }
