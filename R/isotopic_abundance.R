@@ -123,6 +123,8 @@ isotopic_abundance = function(formula = "C2H4O1", isotope = "[13]C1C-1", elem_ta
   }
 
 
+
+
   elem_parent = element2[number2<0]
   elem_iso = element2[number2>0]
 
@@ -131,16 +133,17 @@ isotopic_abundance = function(formula = "C2H4O1", isotope = "[13]C1C-1", elem_ta
   if(!any(element1 == elem_iso)){
 
     n1_iso=0
-
+    iso_parent = 1
   }else{
     n1_iso = number1[element1 == elem_iso]
 
-
+    iso_parent = choose((n1_iso+n1_parent),n1_iso)*elem_table$abundance[elem_table$element == elem_iso]^(n1_iso)
   }
-  iso_abun = choose(n1_parent, (n1_iso+n2_iso))*elem_table$abundance[elem_table$element == elem_iso]^(n1_iso+n2_iso)
 
+  iso_target = choose(n1_parent+n1_iso, (n1_iso+n2_iso))*elem_table$abundance[elem_table$element == elem_iso]^(n1_iso+n2_iso)
+  iso_ratio = iso_target/iso_parent
 
-  return(iso_abun)
+  return(iso_ratio)
 }
 
 
