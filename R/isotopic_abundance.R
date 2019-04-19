@@ -129,6 +129,8 @@ isotopic_abundance = function(formula = "C2H4O1", isotope = "[13]C1C-1", elem_ta
   elem_iso = element2[number2>0]
 
   n1_parent = number1[element1 == elem_parent]
+  if(length(n1_parent)==0){return(0)}
+
   n2_iso = number2[element2 == elem_iso]
   if(!any(element1 == elem_iso)){
 
