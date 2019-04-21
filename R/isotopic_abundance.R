@@ -4,20 +4,20 @@
 #'
 #' @param formula e.g. "C2H4O1"
 #' @param elem_table a table records unsaturation
-#' @param isotope ..
+#' @param isotope e.g. [13]C, or [13]C2 for M+2
 #'
 #' @return the ratio of given formula and its isotopic peak
 #' @export
 #'
-#' @examples formula_rdbe(formula = "C2H4O1", elem_table = lc8::elem_table)
-isotopic_abundance = function(formula = "C2H4O1", isotope = "[13]C1C-1", elem_table = lc8::elem_table){
-
+#' @examples isotopic_abundance(formula = "C2H4O1", elem_table = lc8::elem_table)
+isotopic_abundance = function(formula = "C2H4O1", isotope = "[13]C1", elem_table = lc8::elem_table){
   formula <- gsub("D", "[2]H", formula)
   ende2 <- nchar(formula)
   element2 <- c()
   number2 <- c()
   j <- c(1)
   while (j <= ende2) {
+
     if (substr(formula, j, j) == c("[")) {
       b <- j
       while (any(substr(formula, j, j) == c("]")) !=
@@ -66,12 +66,14 @@ isotopic_abundance = function(formula = "C2H4O1", isotope = "[13]C1C-1", elem_ta
   number1 = number2
   element1 = element2
 
+
   formula <- gsub("D", "[2]H", isotope)
   ende2 <- nchar(formula)
   element2 <- c()
   number2 <- c()
   j <- c(1)
   while (j <= ende2) {
+
     if (substr(formula, j, j) == c("[")) {
       b <- j
       while (any(substr(formula, j, j) == c("]")) !=
@@ -83,9 +85,14 @@ isotopic_abundance = function(formula = "C2H4O1", isotope = "[13]C1C-1", elem_ta
                                             "2", "3", "4", "5", "6", "7", "8", "9")) !=
              TRUE) {
         j <- c(j + 1)
+        if(j>ende2){   break      }
       }
       m <- c(j - 1)
       element2 <- c(element2, substr(formula, b, m))
+    }
+    if(j>ende2){
+      number2 = c(number2, 1)
+      break
     }
     if (any(substr(formula, j, j) == c("-", "0", "1", "2", "3",
                                        "4", "5", "6", "7", "8", "9")) != TRUE) {
@@ -94,10 +101,15 @@ isotopic_abundance = function(formula = "C2H4O1", isotope = "[13]C1C-1", elem_ta
                                             "2", "3", "4", "5", "6", "7", "8", "9")) !=
              TRUE) {
         j <- c(j + 1)
+        if(j>ende2){   break      }
       }
       m <- c(j - 1)
       j <- c(j - 1)
       element2 <- c(element2, substr(formula, k, m))
+    }
+    if(j>ende2){
+      number2 = c(number2, 1)
+      break
     }
     if (any(substr(formula, j, j) == c("-", "0", "1", "2", "3",
                                        "4", "5", "6", "7", "8", "9")) == TRUE) {
@@ -117,16 +129,16 @@ isotopic_abundance = function(formula = "C2H4O1", isotope = "[13]C1C-1", elem_ta
   }
 
 
-  if(sum(number2<0)!=1 | sum(number2>0)!=1 ){
-    print("error, incorrect isotope input")
-    return(0)
-  }
+  # if(sum(number2<0)!=1 | sum(number2>0)!=1 ){
+  #   print("error, incorrect isotope input")
+  #   return(0)
+  # }
 
 
 
 
-  elem_parent = element2[number2<0]
-  elem_iso = element2[number2>0]
+  elem_iso = element2[1]
+  elem_parent = gsub("\\[\\d+\\]", "", elem_iso)
 
   n1_parent = number1[element1 == elem_parent]
   if(length(n1_parent)==0){return(0)}
