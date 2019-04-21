@@ -4,13 +4,13 @@
 \alias{isotopic_abundance}
 \title{isotopic_abundance}
 \usage{
-isotopic_abundance(formula = "C2H4O1", isotope = "[13]C1C-1",
+isotopic_abundance(formula = "C2H4O1", isotope = "[13]C1",
   elem_table = lc8::elem_table)
 }
 \arguments{
 \item{formula}{e.g. "C2H4O1"}
 
-\item{isotope}{..}
+\item{isotope}{e.g. [13]C, or [13]C2 for M+2}
 
 \item{elem_table}{a table records unsaturation}
 }
@@ -21,5 +21,5 @@ the ratio of given formula and its isotopic peak
 isotopic_abundance
 }
 \examples{
-formula_rdbe(formula = "C2H4O1", elem_table = lc8::elem_table)
+isotopic_abundance(formula = "C2H4O1", elem_table = lc8::elem_table)
 }
