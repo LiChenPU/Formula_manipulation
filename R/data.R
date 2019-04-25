@@ -1,4 +1,4 @@
-#library(readr)
+# library(readr)
 # setwd("./data")
 # full_isotopes = read_csv("full_isotopes.csv")
 # save(full_isotopes, file="full_isotopes.rda")
@@ -22,7 +22,7 @@
 # sinew::makeOxygen(elem_table)
 #' @title elem_table
 #' @description elem_table
-#' @format A data frame with 97 rows and 6 variables:
+#' @format A data frame with 100 rows and 6 variables:
 #' \describe{
 #'   \item{\code{element}}{character COLUMN_DESCRIPTION}
 #'   \item{\code{isotope}}{character COLUMN_DESCRIPTION}
