@@ -38,10 +38,22 @@
   Ni_iso=(57.935343-58)
   Cu_iso=(62.929597-63)
 
-
   H_mass = 1.00782503224
   e_mass = 0.00054857990943
+
+
+  # element ratio from 7 golden rule
+  H_C_ratio_min = 0.1
+  H_C_ratio_max = 6
+  N_C_ratio_max = 4
+  O_C_ratio_max = 3
+  P_C_ratio_max = 2
+  S_C_ratio_max = 3
+  Si_C_ratio_max = 1
+  F_C_ratio_max = 6
+  Cl_C_ratio_max = 2
 }
+
 
 #' mz_formula
 #'
@@ -69,6 +81,7 @@
 #' @param Ca_range Ca number range
 #' @param Cu_range Cu number range
 #' @param Ni_range Ni number range
+#' @param Elem_ratio_rule element ratio from 7 golden rule, 0.1<= H/C <=6, N/C<=4, O/C<=3, P/C<=2, S/C<=3, Si/C<=1, F/C<=6, Cl/C<=2
 #'
 #' @export
 #' @return a dataframe recording formula, mass difference and db_r number that fall within ppm of input mass
@@ -99,6 +112,7 @@ mz_formula = function(Accurate_mass = 148.0604,
                       Cu_range = 0:0,
                       Ni_range = 0:0,
                       N_rule = T,
+                      Elem_ratio_rule = F,
                       db_min = 0,
                       db_max = 99,
                       metal_ion = 0:3)
@@ -176,6 +190,20 @@ mz_formula = function(Accurate_mass = 148.0604,
                             differ = (H_iso*H) + Heavy_atom_decimal - mz_decimal
                             if(differ > tolerance | differ < -tolerance) next
 
+                            ##(5) Element ratio from 7 golded rule
+                            if(Elem_ratio_rule & C!=0){
+                              Meet_ratio_rule = all (H/C >= H_C_ratio_min,
+                                                     H/C <= H_C_ratio_max,
+                                                     N/C <= N_C_ratio_max,
+                                                     O/C <= O_C_ratio_max,
+                                                     P/C <= P_C_ratio_max,
+                                                     S/C <= S_C_ratio_max,
+                                                     Si/C <= Si_C_ratio_max,
+                                                     fluorine/C <= F_C_ratio_max,
+                                                     Cl/C <=Cl_C_ratio_max
+                                                     )
+                              if(!Meet_ratio_rule) next
+                            }
                             ## record
 
                             temp_formula$count = c(B, Br, C, Ca, Cl, Cu, fluorine, H, I, K, N, Na, Ni, O, P, S, Si)
@@ -234,6 +262,21 @@ mz_formula = function(Accurate_mass = 148.0604,
                                     ##(4) Decimal place
                                     differ = (H_iso*H) + Heavy_atom_decimal - mz_decimal
                                     if(differ > tolerance | differ < -tolerance) next
+
+                                    ##(5) Element ratio from 7 golded rule
+                                    if(Elem_ratio_rule & C!=0){
+                                      Meet_ratio_rule = all (H/C >= H_C_ratio_min,
+                                                             H/C <= H_C_ratio_max,
+                                                             N/C <= N_C_ratio_max,
+                                                             O/C <= O_C_ratio_max,
+                                                             P/C <= P_C_ratio_max,
+                                                             S/C <= S_C_ratio_max,
+                                                             Si/C <= Si_C_ratio_max,
+                                                             fluorine/C <= F_C_ratio_max,
+                                                             Cl/C <=Cl_C_ratio_max
+                                      )
+                                      if(!Meet_ratio_rule) next
+                                    }
 
                                     ## record
 

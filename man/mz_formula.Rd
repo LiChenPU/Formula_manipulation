@@ -9,8 +9,8 @@ mz_formula(Accurate_mass = 148.0604, charge = 1, ppm = 5,
   Cl_range = 0:0, P_range = 0:3, S_range = 0:3, Na_range = 0:0,
   K_range = 0:0, F_range = 0:0, Br_range = 0:0, I_range = 0:0,
   Si_range = 0:0, B_range = 0:0, Ca_range = 0:0, Cu_range = 0:0,
-  Ni_range = 0:0, N_rule = T, db_min = 0, db_max = 99,
-  metal_ion = 0:3)
+  Ni_range = 0:0, N_rule = T, Elem_ratio_rule = F, db_min = 0,
+  db_max = 99, metal_ion = 0:3)
 }
 \arguments{
 \item{Accurate_mass}{accurate mass from ms data}
@@ -54,6 +54,8 @@ mz_formula(Accurate_mass = 148.0604, charge = 1, ppm = 5,
 \item{Ni_range}{Ni number range}
 
 \item{N_rule}{nitrogen rule}
+
+\item{Elem_ratio_rule}{element ratio from 7 golden rule, 0.1<= H/C <=6, N/C<=4, O/C<=3, P/C<=2, S/C<=3, Si/C<=1, F/C<=6, Cl/C<=2}
 
 \item{db_min}{min of double bond and ring number}
 
