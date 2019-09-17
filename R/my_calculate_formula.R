@@ -13,6 +13,7 @@
 #'
 #' @examples my_calculate_formula(formula1 = "C2H4O1S2P1",formula2 = "N1H1O-1",sign = 1,Is_valid = TRUE)
 my_calculate_formula = function(formula1,formula2,sign = 1,Is_valid = TRUE){
+
   {
     formula2 <- gsub("D", "[2]H", formula2)
     ende2 <- nchar(formula2)
@@ -128,14 +129,12 @@ my_calculate_formula = function(formula1,formula2,sign = 1,Is_valid = TRUE){
       elem_all = c(elem_all,element2[i])
     }
   }
-
-
   if(any(count_all<0)==TRUE & Is_valid){
     return(F)
-  }
-  else{
-    count_all = count_all[order(elem_all)]
-    elem_all = elem_all[order(elem_all)]
+  } else{
+    elem_order = order(elem_all)
+    count_all = count_all[elem_order]
+    elem_all = elem_all[elem_order]
 
     elem_all=elem_all[count_all!=0]
     count_all=count_all[count_all!=0]
@@ -147,3 +146,5 @@ my_calculate_formula = function(formula1,formula2,sign = 1,Is_valid = TRUE){
     return(formula_all)
   }
 }
+
+my_calculate_formula("C1H2N3O4", "C3H2B2")
