@@ -11,7 +11,9 @@
 #' @examples elem_num_query("C2H4O2","C")
 elem_num_query = function(formula,elem_query){
 
+
   if(!is.character(formula)|is.na(formula)){return(NA)}
+
   formula <- gsub("D", "[2]H", formula)
   ende2 <- nchar(formula)
   element2 <- c()
