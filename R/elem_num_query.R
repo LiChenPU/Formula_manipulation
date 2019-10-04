@@ -28,7 +28,7 @@ elem_num_query = function(formula,elem_query){
         j <- c(j + 1)
       }
       k <- j
-      while (any(substr(formula, j, j) == c("0", "1",
+      while (any(substr(formula, j, j) == c("-", ".", "0", "1",
                                              "2", "3", "4", "5", "6", "7", "8", "9")) !=
              TRUE) {
         j <- c(j + 1)
@@ -36,10 +36,10 @@ elem_num_query = function(formula,elem_query){
       m <- c(j - 1)
       element2 <- c(element2, substr(formula, b, m))
     }
-    if (any(substr(formula, j, j) == c("0", "1", "2", "3",
+    if (any(substr(formula, j, j) == c("-", ".", "0", "1", "2", "3",
                                         "4", "5", "6", "7", "8", "9")) != TRUE) {
       k <- j
-      while (any(substr(formula, j, j) == c("0", "1",
+      while (any(substr(formula, j, j) == c("-", ".", "0", "1",
                                              "2", "3", "4", "5", "6", "7", "8", "9")) !=
              TRUE) {
         j <- c(j + 1)
@@ -48,10 +48,10 @@ elem_num_query = function(formula,elem_query){
       j <- c(j - 1)
       element2 <- c(element2, substr(formula, k, m))
     }
-    if (any(substr(formula, j, j) == c("0", "1", "2", "3",
+    if (any(substr(formula, j, j) == c("-", ".", "0", "1", "2", "3",
                                         "4", "5", "6", "7", "8", "9")) == TRUE) {
       k <- j
-      while (any(substr(formula, j, j) == c("0", "1",
+      while (any(substr(formula, j, j) == c("-", ".", "0", "1",
                                              "2", "3", "4", "5", "6", "7", "8", "9")) ==
              TRUE) {
         j <- c(j + 1)

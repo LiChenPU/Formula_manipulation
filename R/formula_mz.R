@@ -32,7 +32,7 @@ formula_mz = function(formula = "C2H4O1", charge = 0,elem_table = lc8::elem_tabl
         j <- c(j + 1)
       }
       k <- j
-      while (any(substr(temp_formula, j, j) == c("-", "0", "1",
+      while (any(substr(temp_formula, j, j) == c("-", ".","0", "1",
                                             "2", "3", "4", "5", "6", "7", "8", "9")) !=
              TRUE) {
         j <- c(j + 1)
@@ -40,10 +40,10 @@ formula_mz = function(formula = "C2H4O1", charge = 0,elem_table = lc8::elem_tabl
       m <- c(j - 1)
       element2 <- c(element2, substr(temp_formula, b, m))
     }
-    if (any(substr(temp_formula, j, j) == c("-", "0", "1", "2", "3",
+    if (any(substr(temp_formula, j, j) == c("-", ".","0", "1", "2", "3",
                                        "4", "5", "6", "7", "8", "9")) != TRUE) {
       k <- j
-      while (any(substr(temp_formula, j, j) == c("-", "0", "1",
+      while (any(substr(temp_formula, j, j) == c("-", ".","0", "1",
                                             "2", "3", "4", "5", "6", "7", "8", "9")) !=
              TRUE) {
         j <- c(j + 1)
@@ -52,10 +52,10 @@ formula_mz = function(formula = "C2H4O1", charge = 0,elem_table = lc8::elem_tabl
       j <- c(j - 1)
       element2 <- c(element2, substr(temp_formula, k, m))
     }
-    if (any(substr(temp_formula, j, j) == c("-", "0", "1", "2", "3",
+    if (any(substr(temp_formula, j, j) == c("-", ".","0", "1", "2", "3",
                                        "4", "5", "6", "7", "8", "9")) == TRUE) {
       k <- j
-      while (any(substr(temp_formula, j, j) == c("-", "0", "1",
+      while (any(substr(temp_formula, j, j) == c("-", ".","0", "1",
                                             "2", "3", "4", "5", "6", "7", "8", "9")) ==
              TRUE) {
         j <- c(j + 1)

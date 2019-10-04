@@ -28,7 +28,7 @@ my_calculate_formula = function(formula1,formula2,sign = 1,Is_valid = TRUE){
           j <- c(j + 1)
         }
         k <- j
-        while (any(substr(formula2, j, j) == c("-", "0", "1",
+        while (any(substr(formula2, j, j) == c("-", ".",  "0", "1",
                                                "2", "3", "4", "5", "6", "7", "8", "9")) !=
                TRUE) {
           j <- c(j + 1)
@@ -36,10 +36,10 @@ my_calculate_formula = function(formula1,formula2,sign = 1,Is_valid = TRUE){
         m <- c(j - 1)
         element2 <- c(element2, substr(formula2, b, m))
       }
-      if (any(substr(formula2, j, j) == c("-", "0", "1", "2", "3",
+      if (any(substr(formula2, j, j) == c("-", ".",  "0", "1", "2", "3",
                                           "4", "5", "6", "7", "8", "9")) != TRUE) {
         k <- j
-        while (any(substr(formula2, j, j) == c("-", "0", "1",
+        while (any(substr(formula2, j, j) == c("-", ".",  "0", "1",
                                                "2", "3", "4", "5", "6", "7", "8", "9")) !=
                TRUE) {
           j <- c(j + 1)
@@ -48,10 +48,10 @@ my_calculate_formula = function(formula1,formula2,sign = 1,Is_valid = TRUE){
         j <- c(j - 1)
         element2 <- c(element2, substr(formula2, k, m))
       }
-      if (any(substr(formula2, j, j) == c("-", "0", "1", "2", "3",
+      if (any(substr(formula2, j, j) == c("-", ".",  "0", "1", "2", "3",
                                           "4", "5", "6", "7", "8", "9")) == TRUE) {
         k <- j
-        while (any(substr(formula2, j, j) == c("-", "0", "1",
+        while (any(substr(formula2, j, j) == c("-", ".",  "0", "1",
                                                "2", "3", "4", "5", "6", "7", "8", "9")) ==
                TRUE) {
           j <- c(j + 1)
@@ -81,7 +81,7 @@ my_calculate_formula = function(formula1,formula2,sign = 1,Is_valid = TRUE){
           j <- c(j + 1)
         }
         k <- j
-        while (any(substr(formula1, j, j) == c("-", "0", "1",
+        while (any(substr(formula1, j, j) == c("-", ".",  "0", "1",
                                                "2", "3", "4", "5", "6", "7", "8", "9")) !=
                TRUE) {
           j <- c(j + 1)
@@ -89,10 +89,10 @@ my_calculate_formula = function(formula1,formula2,sign = 1,Is_valid = TRUE){
         m <- c(j - 1)
         elem_all <- c(elem_all, substr(formula1, b, m))
       }
-      if (any(substr(formula1, j, j) == c("-", "0", "1", "2", "3",
+      if (any(substr(formula1, j, j) == c("-", ".",  "0", "1", "2", "3",
                                           "4", "5", "6", "7", "8", "9")) != TRUE) {
         k <- j
-        while (any(substr(formula1, j, j) == c("-", "0", "1",
+        while (any(substr(formula1, j, j) == c("-", ".",  "0", "1",
                                                "2", "3", "4", "5", "6", "7", "8", "9")) !=
                TRUE) {
           j <- c(j + 1)
@@ -101,10 +101,10 @@ my_calculate_formula = function(formula1,formula2,sign = 1,Is_valid = TRUE){
         j <- c(j - 1)
         elem_all <- c(elem_all, substr(formula1, k, m))
       }
-      if (any(substr(formula1, j, j) == c("-", "0", "1", "2", "3",
+      if (any(substr(formula1, j, j) == c("-", ".",  "0", "1", "2", "3",
                                           "4", "5", "6", "7", "8", "9")) == TRUE) {
         k <- j
-        while (any(substr(formula1, j, j) == c("-", "0", "1",
+        while (any(substr(formula1, j, j) == c("-", ".",  "0", "1",
                                                "2", "3", "4", "5", "6", "7", "8", "9")) ==
                TRUE) {
           j <- c(j + 1)

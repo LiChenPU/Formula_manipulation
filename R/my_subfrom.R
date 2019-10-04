@@ -1,5 +1,5 @@
 
-#' My_subfrom
+#' My_subfrom (deprecated) Use my_calculate_formula
 #'
 #' @param formula1 enter a chemical formula, e.g. "C2H4O2"
 #' @param formula2 enter a second formula, e.g. "C1H2"
