@@ -33,3 +33,18 @@
 #'}
 #' @details DETAILS
 "elem_table"
+
+
+# periodic_table = read_csv("periodic_table.csv")
+# save(periodic_table, file="periodic_table.rda")
+# sinew::makeOxygen(periodic_table)
+#' @title periodic_table
+#' @description DATASET_DESCRIPTION
+#' @format A data frame with 118 rows and 3 variables:
+#' \describe{
+#'   \item{\code{Element Name}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{Symbol}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{Atomic Number}}{double COLUMN_DESCRIPTION}
+#'}
+#' @details DETAILS
+"periodic_table"
