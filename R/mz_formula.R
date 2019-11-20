@@ -119,9 +119,6 @@ mz_formula = function(Accurate_mass = 148.0604,
 {
 
 
-
-
-
   if(charge==0){mz_neutral=Accurate_mass}
   else{mz_neutral = (Accurate_mass - (H_mass-e_mass)*sign(charge))*abs(charge)}
   tolerance = mz_neutral*ppm/10^6
@@ -291,7 +288,7 @@ mz_formula = function(Accurate_mass = 148.0604,
 
   #print(paste("iteration =", iteration))
   if(length(temp_formula_list)==0){
-    return(NA)
+    return(data.frame(formula = as.character(), differ = as.numeric(), db_r = as.numeric()))
   }
 
   formula_df=as.data.frame(matrix(unlist(temp_formula_list),ncol=3,byrow = T),stringsAsFactors=F)
