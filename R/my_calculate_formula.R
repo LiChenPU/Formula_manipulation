@@ -137,8 +137,6 @@ my_calculate_formula = function(Formula1,Formula2,sign = 1, Valid_formula = FALS
       element2 = formula2_ls[[col_j]][[1]]
       number2 = formula2_ls[[col_j]][[2]]
 
-
-
       for(i in 1:length(element2)){
         if(any(element2[i]==elem_all) == TRUE){
           count_all[elem_all==element2[i]] = count_all[elem_all==element2[i]]+number2[i]
@@ -160,10 +158,10 @@ my_calculate_formula = function(Formula1,Formula2,sign = 1, Valid_formula = FALS
       count_all=count_all[count_all!=0]
       formula_all=c()
       for (i in 1:length(count_all)) {
-        formula_all <- paste0(formula_all, elem_all[i],
+        formula_all <- c(formula_all, elem_all[i],
                               count_all[i])
       }
-      formula_mat[row_i,col_j]=formula_all
+      formula_mat[row_i,col_j]=paste0(formula_all, collapse = "")
     }
   }
 
@@ -177,3 +175,5 @@ my_calculate_formula = function(Formula1,Formula2,sign = 1, Valid_formula = FALS
 }
 
 # my_calculate_formula(c("C1H2","C3H4O2"), "C1O2", sign = 1, Valid_formula=F)
+# Formula1 = c("C1H2","C3H4O2")
+# Formula2 = "C1O2"
