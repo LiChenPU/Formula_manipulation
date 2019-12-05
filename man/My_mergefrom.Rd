@@ -2,7 +2,7 @@
 % Please edit documentation in R/my_mergefrom.R
 \name{My_mergefrom}
 \alias{My_mergefrom}
-\title{My_mergefrom}
+\title{My_mergefrom (deprecated) Use my_calculate_formula}
 \usage{
 My_mergefrom(formula1, formula2)
 }
@@ -15,7 +15,7 @@ My_mergefrom(formula1, formula2)
 the merge formula of two entered formula
 }
 \description{
-My_mergefrom
+My_mergefrom (deprecated) Use my_calculate_formula
 }
 \examples{
 My_mergefrom("C2H4O2","C1H3Cl2")
