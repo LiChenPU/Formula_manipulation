@@ -171,10 +171,19 @@ my_calculate_formula = function(Formula1,Formula2,sign = 1, Valid_formula = FALS
     valid_mat = as.vector(valid_mat)
   }
 
-  if(Valid_formula){return(list(formula_mat, valid_mat))}
-  else{return(formula_mat)}
+  if(Valid_formula){
+    return(list(formula_mat, valid_mat))
+  } else {
+    return(formula_mat)
+  }
 }
 
 # Formula1 = c("C1H2","C3H4O2")
-# Formula2 = c("C1O2","N1H3","B1O2")
+# Formula2 = c("C1H2","N1H3","B1O2")
 # my_calculate_formula(Formula1, Formula2)
+# for(i in 1:1000000){
+#   identical(formula1_ls[[1]], formula2_ls[[3]])
+# }
+
+
+

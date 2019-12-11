@@ -128,36 +128,39 @@ isotopic_abundance = function(formula = "C2H4O1", isotope = "[13]C1", elem_table
 
   }
 
+  selected_isotopes = grepl("\\[\\d+\\]",element2)
+  number_isotopes = number2[selected_isotopes]
+  element_isotopes = element2[selected_isotopes]
 
-  # if(sum(number2<0)!=1 | sum(number2>0)!=1 ){
-  #   print("error, incorrect isotope input")
-  #   return(0)
-  # }
+  # for loop each elem_iso
+  # find corresponding elem
+  # calculate ratio
+  # save and repeat loop
+
+  ratio = 1
+  for(i in 1:length(element_isotopes)){
+    element_isotope = element_isotopes[i]
+    element_parent = gsub("\\[\\d+\\]", "", element_isotope)
+    num_isotope_formula2 = number_isotopes[i]
+
+    num_parent_formula1 = number1[element1 == element_parent]
+    num_isotpe_formula1 = 0
+    if(any(element1 == element_isotope)){
+      num_isotpe_formula1 = number1[element1 == element_isotope]
+    }
 
 
+    natural_abundance = elem_table$abundance[elem_table$element == element_isotope]
 
+    inten_formula1 = choose((num_parent_formula1+num_isotpe_formula1),num_isotpe_formula1)*natural_abundance^(num_isotpe_formula1)
+    inten_formula2 = choose((num_parent_formula1+num_isotpe_formula1),(num_isotpe_formula1+num_isotope_formula2))*natural_abundance^(num_isotpe_formula1+num_isotope_formula2)
 
-  elem_iso = element2[1]
-  elem_parent = gsub("\\[\\d+\\]", "", elem_iso)
+    ratio = ratio * (inten_formula2/inten_formula1)
 
-  n1_parent = number1[element1 == elem_parent]
-  if(length(n1_parent)==0){return(0)}
-
-  n2_iso = number2[element2 == elem_iso]
-  if(!any(element1 == elem_iso)){
-
-    n1_iso=0
-    iso_parent = 1
-  }else{
-    n1_iso = number1[element1 == elem_iso]
-
-    iso_parent = choose((n1_iso+n1_parent),n1_iso)*elem_table$abundance[elem_table$element == elem_iso]^(n1_iso)
   }
 
-  iso_target = choose(n1_parent+n1_iso, (n1_iso+n2_iso))*elem_table$abundance[elem_table$element == elem_iso]^(n1_iso+n2_iso)
-  iso_ratio = iso_target/iso_parent
-
-  return(iso_ratio)
+  return(ratio)
 }
+
 
 
