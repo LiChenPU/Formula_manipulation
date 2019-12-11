@@ -132,23 +132,21 @@ isotopic_abundance = function(formula = "C2H4O1", isotope = "[13]C1", elem_table
   number_isotopes = number2[selected_isotopes]
   element_isotopes = element2[selected_isotopes]
 
-  # for loop each elem_iso
-  # find corresponding elem
-  # calculate ratio
-  # save and repeat loop
-
   ratio = 1
   for(i in 1:length(element_isotopes)){
     element_isotope = element_isotopes[i]
     element_parent = gsub("\\[\\d+\\]", "", element_isotope)
     num_isotope_formula2 = number_isotopes[i]
 
-    num_parent_formula1 = number1[element1 == element_parent]
+
+    num_parent_formula1 = 0
     num_isotpe_formula1 = 0
+    if(any(element1 == element_parent)){
+      num_parent_formula1 = number1[element1 == element_parent]
+    }
     if(any(element1 == element_isotope)){
       num_isotpe_formula1 = number1[element1 == element_isotope]
     }
-
 
     natural_abundance = elem_table$abundance[elem_table$element == element_isotope]
 
@@ -162,5 +160,7 @@ isotopic_abundance = function(formula = "C2H4O1", isotope = "[13]C1", elem_table
   return(ratio)
 }
 
-
-
+# test
+# formula = "[13]C1"
+# isotope = "[13]C-1"
+# isotopic_abundance("[13]C1", "[13]C-1")
