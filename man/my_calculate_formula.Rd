@@ -4,23 +4,24 @@
 \alias{my_calculate_formula}
 \title{my_calculate_formula}
 \usage{
-my_calculate_formula(formula1, formula2, sign = 1, Is_valid = TRUE)
+my_calculate_formula(Formula1, Formula2, sign = 1,
+  Valid_formula = FALSE)
 }
 \arguments{
-\item{formula1}{formula1}
+\item{Formula1}{formula1 (could be a vector)}
 
-\item{formula2}{formula1}
+\item{Formula2}{formula2 (could be a vector)}
 
 \item{sign}{1 for merge two formula, -1 for subtract second from first formula}
 
-\item{Is_valid}{if set True, only return formula if the element count is > 0}
+\item{valid_mat}{if set True, only return formula if the element count is > 0}
 }
 \value{
-the merge or subtract formula
+the merge or subtract formula in vector or matrix; and if valid_mati is true, a validation of whether negative element presents
 }
 \description{
 my_calculate_formula
 }
 \examples{
-my_calculate_formula(formula1 = "C2H4O1S2P1",formula2 = "N1H1O-1",sign = 1,Is_valid = TRUE)
+my_calculate_formula(Formula1 = "C2H4O1S2P1",Formula2 = "N1H1O-1",sign = 1,Valid_formula = FALSE)
 }

@@ -11,7 +11,7 @@
 #' @return the merge or subtract formula in vector or matrix; and if valid_mati is true, a validation of whether negative element presents
 #' @export
 #'
-#' @examples my_calculate_formula(Formula1 = "C2H4O1S2P1",Formula2 = "N1H1O-1",sign = 1,Is_valid = TRUE)
+#' @examples my_calculate_formula(Formula1 = "C2H4O1S2P1",Formula2 = "N1H1O-1",sign = 1,Valid_formula = FALSE)
 my_calculate_formula = function(Formula1,Formula2,sign = 1, Valid_formula = FALSE){
   formula2_ls = list()
   for(i in 1:length(Formula2)){
