@@ -15,14 +15,18 @@
 #'
 formula_mz = function(formula = "C2H4O1", charge = 0,elem_table = lc8::elem_table){
 
-  if(formula == ""){
-    return(0)
-  }
-  if(is.na(formula) | is.null(formula)){
-    return(formula)
-  }
   mz = numeric()
   for(i in 1:length(formula)){
+
+    if(is.na(formula) | is.null(formula)){
+      mz[i] = NA
+      next
+    }
+    if(formula == ""){
+      mz[i] = 0
+      next
+    }
+
 
   temp_formula = formula[i]
   temp_formula <- gsub("D", "[2]H", temp_formula)
