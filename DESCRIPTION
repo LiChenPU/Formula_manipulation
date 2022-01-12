@@ -3,12 +3,18 @@ Type: Package
 Title: Package handling formula
 Version: 0.1.0
 Author: lc8
-Maintainer: lc8 <lc8@princeton.edu>
-Description: Package handling formula
-    Use four spaces when indenting paragraphs within the Description.
+Maintainer: lc8 <chenli_imib@fudan.edu.cn>
+Description: 
+* my_calculate_formula: Merge two formulas or substract formula2 from formula1
+* formula_mz: given a formula, return the exact mass
+* formula_rdbe: given a formula, return the ring and double bond equivalent (rdbe)
+* isotopic_abundance: given a formula and an isotope, return the relative abundance of that isotopic form
+* mz_formula: given an accurate mass, charge, elemental constraint, and ppm tolerance, guess possible formula
+* my_break_formula: given a formula, return its elements and their numbers
+* elem_num_query: query the number of an element in a formula
+* elem_table.rda, full_isotopes.rda, periodic_table.rda: Contains periodic table information
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.2
-Imports: 
-    dplyr
+Suggests: enviPat
