@@ -4,13 +4,33 @@
 \alias{mz_formula}
 \title{mz_formula}
 \usage{
-mz_formula(Accurate_mass = 148.0604, charge = 1, ppm = 5,
-  C_range = 0:99, H_range = 0:100, O_range = 0:20, N_range = 0:12,
-  Cl_range = 0:0, P_range = 0:3, S_range = 0:3, Na_range = 0:0,
-  K_range = 0:0, F_range = 0:0, Br_range = 0:0, I_range = 0:0,
-  Si_range = 0:0, B_range = 0:0, Ca_range = 0:0, Cu_range = 0:0,
-  Ni_range = 0:0, N_rule = T, Elem_ratio_rule = F, db_min = 0,
-  db_max = 99, metal_ion = 0:3)
+mz_formula(
+  Accurate_mass = 148.0604,
+  charge = 1,
+  ppm = 5,
+  C_range = 0:99,
+  H_range = 0:100,
+  O_range = 0:20,
+  N_range = 0:12,
+  Cl_range = 0:0,
+  P_range = 0:3,
+  S_range = 0:3,
+  Na_range = 0:0,
+  K_range = 0:0,
+  F_range = 0:0,
+  Br_range = 0:0,
+  I_range = 0:0,
+  Si_range = 0:0,
+  B_range = 0:0,
+  Ca_range = 0:0,
+  Cu_range = 0:0,
+  Ni_range = 0:0,
+  N_rule = T,
+  Elem_ratio_rule = F,
+  db_min = 0,
+  db_max = 99,
+  metal_ion = 0:3
+)
 }
 \arguments{
 \item{Accurate_mass}{accurate mass from ms data}

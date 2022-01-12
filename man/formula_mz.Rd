@@ -4,8 +4,7 @@
 \alias{formula_mz}
 \title{formula_mz}
 \usage{
-formula_mz(formula = "C2H4O1", charge = 0,
-  elem_table = lc8::elem_table)
+formula_mz(formula = "C2H4O1", charge = 0, elem_table = lc8::elem_table)
 }
 \arguments{
 \item{formula}{e.g. "C2H4O1"}

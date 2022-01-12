@@ -4,12 +4,14 @@
 \name{periodic_table}
 \alias{periodic_table}
 \title{periodic_table}
-\format{A data frame with 118 rows and 3 variables:
+\format{
+A data frame with 118 rows and 3 variables:
 \describe{
   \item{\code{Element Name}}{character COLUMN_DESCRIPTION}
   \item{\code{Symbol}}{character COLUMN_DESCRIPTION}
   \item{\code{Atomic Number}}{double COLUMN_DESCRIPTION}
-}}
+}
+}
 \usage{
 periodic_table
 }

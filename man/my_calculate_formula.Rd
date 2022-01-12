@@ -4,8 +4,7 @@
 \alias{my_calculate_formula}
 \title{my_calculate_formula}
 \usage{
-my_calculate_formula(Formula1, Formula2, sign = 1,
-  Valid_formula = FALSE)
+my_calculate_formula(Formula1, Formula2, sign = 1, Valid_formula = FALSE)
 }
 \arguments{
 \item{Formula1}{formula1 (could be a vector)}
@@ -14,7 +13,7 @@ my_calculate_formula(Formula1, Formula2, sign = 1,
 
 \item{sign}{1 for merge two formula, -1 for subtract second from first formula}
 
-\item{valid_mat}{if set True, only return formula if the element count is > 0}
+\item{Valid_formula}{if set True, only return formula if the element count is > 0}
 }
 \value{
 the merge or subtract formula in vector or matrix; and if valid_mati is true, a validation of whether negative element presents

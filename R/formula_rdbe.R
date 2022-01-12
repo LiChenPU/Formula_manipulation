@@ -15,7 +15,7 @@ formula_rdbe = function(formula = "C2H4O1", elem_table = lc8::elem_table){
   for(i in 1:length(formula)){
 
     temp_formula = formula[i]
-    temp_formula <- gsub("D", "[2]H", temp_formula)
+    # temp_formula <- gsub("D", "[2]H", temp_formula)
     ende2 <- nchar(temp_formula)
     element2 <- c()
     number2 <- c()

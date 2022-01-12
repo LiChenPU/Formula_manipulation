@@ -17,8 +17,8 @@
 #' @details DETAILS
 "full_isotopes"
 
-# elem_table = read_csv("elem_table.csv")
-# save(elem_table, file="elem_table.rda")
+# elem_table = read_csv("./data/elem_table.csv")
+# save(elem_table, file="./data/elem_table.rda")
 # sinew::makeOxygen(elem_table)
 #' @title elem_table
 #' @description elem_table
@@ -29,6 +29,7 @@
 #'   \item{\code{mass}}{double COLUMN_DESCRIPTION}
 #'   \item{\code{abundance}}{double COLUMN_DESCRIPTION}
 #'   \item{\code{ratioC}}{double COLUMN_DESCRIPTION}
+#'   \item{\code{Mass_Dif}}{double COLUMN_DESCRIPTION}
 #'   \item{\code{unsaturation}}{double COLUMN_DESCRIPTION}
 #'}
 #' @details DETAILS

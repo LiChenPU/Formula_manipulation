@@ -13,7 +13,7 @@
 #' @examples formula_mz(formula = "C2H4O1", charge = 0)
 #'
 #'
-formula_mz = function(formula = "C2H4O1", charge = 0,elem_table = lc8::elem_table){
+formula_mz = function(formula = "C2H4O1", charge = 0, elem_table = lc8::elem_table){
 
   mz = numeric()
   for(i in 1:length(formula)){
@@ -27,7 +27,7 @@ formula_mz = function(formula = "C2H4O1", charge = 0,elem_table = lc8::elem_tabl
       next
     }
 
-  temp_formula <- gsub("D", "[2]H", temp_formula)
+  # temp_formula <- gsub("D", "[2]H", temp_formula)
   ende2 <- nchar(temp_formula)
   element2 <- c()
   number2 <- c()

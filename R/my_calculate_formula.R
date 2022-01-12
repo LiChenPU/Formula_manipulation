@@ -6,7 +6,7 @@
 #' @param Formula1 formula1 (could be a vector)
 #' @param Formula2 formula2 (could be a vector)
 #' @param sign 1 for merge two formula, -1 for subtract second from first formula
-#' @param valid_mat if set True, only return formula if the element count is > 0
+#' @param Valid_formula if set True, only return formula if the element count is > 0
 #'
 #' @return the merge or subtract formula in vector or matrix; and if valid_mati is true, a validation of whether negative element presents
 #' @export
@@ -17,7 +17,7 @@ my_calculate_formula = function(Formula1,Formula2,sign = 1, Valid_formula = FALS
   for(i in 1:length(Formula2)){
     formula2 = Formula2[i]
     {
-      formula2 <- gsub("D", "[2]H", formula2)
+      # formula2 <- gsub("D", "[2]H", formula2)
       ende2 <- nchar(formula2)
       element2 <- c()
       number2 <- c()
@@ -76,7 +76,7 @@ my_calculate_formula = function(Formula1,Formula2,sign = 1, Valid_formula = FALS
   for(i in 1:length(Formula1)){
     formula1 = Formula1[i]
     {
-      formula1 <- gsub("D", "[2]H", formula1)
+      # formula1 <- gsub("D", "[2]H", formula1)
       ende2 <- nchar(formula1)
       element1 <- c()
       number1 <- c()

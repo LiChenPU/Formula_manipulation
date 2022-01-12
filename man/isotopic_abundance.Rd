@@ -4,8 +4,11 @@
 \alias{isotopic_abundance}
 \title{isotopic_abundance}
 \usage{
-isotopic_abundance(formula = "C2H4O1", isotope = "[13]C1",
-  elem_table = lc8::elem_table)
+isotopic_abundance(
+  formula = "C2H4O1",
+  isotope = "[13]C1",
+  elem_table = lc8::elem_table
+)
 }
 \arguments{
 \item{formula}{e.g. "C2H4O1"}

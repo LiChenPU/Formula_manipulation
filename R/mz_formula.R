@@ -86,7 +86,6 @@
 #' @export
 #' @return a dataframe recording formula, mass difference and db_r number that fall within ppm of input mass
 #'
-#' @importFrom dplyr bind_rows
 #' @examples mz_formula(148.0604, 1, 5)
 #'
 

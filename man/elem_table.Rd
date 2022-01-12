@@ -4,15 +4,18 @@
 \name{elem_table}
 \alias{elem_table}
 \title{elem_table}
-\format{A data frame with 288 rows and 7 variables:
+\format{
+A data frame with 288 rows and 7 variables:
 \describe{
   \item{\code{element}}{character COLUMN_DESCRIPTION}
   \item{\code{isotope}}{character COLUMN_DESCRIPTION}
   \item{\code{mass}}{double COLUMN_DESCRIPTION}
   \item{\code{abundance}}{double COLUMN_DESCRIPTION}
   \item{\code{ratioC}}{double COLUMN_DESCRIPTION}
+  \item{\code{Mass_Dif}}{double COLUMN_DESCRIPTION}
   \item{\code{unsaturation}}{double COLUMN_DESCRIPTION}
-}}
+}
+}
 \usage{
 elem_table
 }
